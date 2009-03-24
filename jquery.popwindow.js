@@ -15,8 +15,12 @@
 
 $.fn.popwindow = function (popWindow,options) {		
 
-	  var defaults = { position: "bottom", offsetTop:10 , offsetSides:0, transitionSpeed:"fast" };
+	  var defaults = { position: "bottom", offsetTop:10 , offsetSides:0, transitionSpeed:"fast", closeTrigger:null };
 	  var opts = $.extend(defaults, options);
+	
+		if(opts.closeTrigger){
+			$(opts.closeTrigger).click(function(){ $(popWindow).fadeToggle(opts.transitionSpeed); });
+		}
 	
 		this.click(function(event){	
 			var element  = $(event.target);
@@ -43,7 +47,7 @@ $.fn.popwindow = function (popWindow,options) {
 			default:
 				newTop  = elementPosition.top  + element.height() + opts.offsetTop;
 				newLeft = (elementPosition.left + (element.width()/2 ) ) - ( $(popWindow).width()/2 )  + opts.offsetSides ;				
-			}						
+			}
 			
 			$(popWindow).bgiframe();
 		  $(popWindow).css({

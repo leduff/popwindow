@@ -15,6 +15,7 @@
   	$("#show3").popwindow("#popup_div3", { position:"top" });
   	$("#show4").popwindow("#popup_div4", { position:"left", offsetTop:0, offsetSides:20 });
   	$("#show5").popwindow("#popup_div5", { position:"right", offsetTop:0, offsetSides:20 });
+  	$("#show6").popwindow("#popup_div6", { closeTrigger:"#close_trigger" });
   });
    
 </script>
@@ -65,6 +66,14 @@ Message goes here
 Popup Message<br /> 
 Message goes here <br /> 
 Message goes here
+</div>
+
+<input type="button" id="show6" value="Show Message with close button"/>
+<div id="popup_div6" class="popup_msg">
+Popup Message<br /> 
+Message goes here <br /> 
+Message goes here<br/>
+<a href="#" id="close_trigger">close me</a></p>
 </div>
 
 <hr/>
